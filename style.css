@@ -95,7 +95,6 @@ header {
 
 footer {
     text-align: center;
-    padding: 20px;
     color: white;
     background-color: black;
     position: fixed;
@@ -107,6 +106,7 @@ footer {
 .footer-content {
     display: flex;
     justify-content: space-around;
+    
 }
 
 .help-section, .contact-section {

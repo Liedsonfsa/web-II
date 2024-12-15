@@ -6,6 +6,7 @@
     <title>Home</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
 </head>
 <body>
     <header>
@@ -21,7 +22,6 @@
     </header>
 
     <main>
-        <h2>Destaques</h2>
         <section class="highlights">
             <div class="highlight-container">
                 <div class="highlight-item">
@@ -75,5 +75,32 @@
         </div>
         <p>&copy; 2024 Kiko, Zinho e Lindo. Todos os direitos reservados.</p>
     </footer>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Inicializa o mapa
+        var map = L.map('map').setView([-7.076, -41.469], 14); // Use a latitude e longitude da sua cidade
+
+        // Adiciona a camada de mapa (OpenStreetMap)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((position) => {
+                const userPosition = [position.coords.latitude, position.coords.longitude];
+                
+                // Atualiza a posição do mapa e marcador
+                map.setView(userPosition, 14);
+                L.marker(userPosition).addTo(map)
+                    .bindPopup('Sua localização atual!')
+                    .openPopup();
+            }, () => {
+                alert('Não foi possível obter sua localização.');
+            });
+        } else {
+            alert('Geolocalização não é suportada pelo seu navegador.');
+        }
+    </script>
 </body>
 </html>
