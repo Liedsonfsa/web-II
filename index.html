@@ -22,7 +22,11 @@
     </header>
 
     <main>
+        <!-- Mapa adicionado aqui -->
+        <div id="map" style="height: 400px; width: 100%;"></div>
+
         <section class="highlights">
+            <h2>Destaques</h2>
             <div class="highlight-container">
                 <div class="highlight-item">
                     <img src="https://via.placeholder.com/300x200?text=Ponto+1" alt="Ponto Turístico 1">
@@ -78,10 +82,9 @@
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
-        // Inicializa o mapa
-        var map = L.map('map').setView([-7.076, -41.469], 14); // Use a latitude e longitude da sua cidade
+        // mapa
+        var map = L.map('map').setView([-7.076, -41.469], 14); 
 
-        // Adiciona a camada de mapa (OpenStreetMap)
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; OpenStreetMap contributors'
         }).addTo(map);
@@ -90,7 +93,6 @@
             navigator.geolocation.getCurrentPosition((position) => {
                 const userPosition = [position.coords.latitude, position.coords.longitude];
                 
-                // Atualiza a posição do mapa e marcador
                 map.setView(userPosition, 14);
                 L.marker(userPosition).addTo(map)
                     .bindPopup('Sua localização atual!')
