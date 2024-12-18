@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <style>
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
+        }
+
+        :root{
+            --cor1: #6b96f39d;
+        }
+        
+        .main{
+            width: 700px;
+            align-items: center;
+            box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.308);
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            margin: auto;
+        }
+
+        header, footer{
+            width: 100%;
+            height: 90px;
+            background-color: var(--cor1);
+        }
+
+        header p{
+            margin-top: 35px;
+            font-size: large;
+            font-weight: bold;
+        }
+
+        .logo{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 80px;
+        }
+
+
+        img{
+            width: 150px;
+            margin-bottom: 30px;
+        }
+
+        .sec2{
+            display: flex;
+            flex-direction: column;
+            margin-left: 30px;
+        }
+
+        .div{
+            display: flex;
+        }
+
+        label{
+            margin: 10px;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.368);
+            padding: 10px;
+            border-radius: 15px;
+            background-color: rgba(211, 211, 211, 0.711);
+            width: 150px;
+        }
+
+        .email{
+            width: 90%;
+        }
+
+        @media (max-width: 700px){
+            .main{
+                width: 630px;
+            }
+        }
+
+        @media (max-width: 630px){
+            .main{
+                width: 430px;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="../img/Luxurious__1_-removebg-preview.png" alt="" class="logo">
+        <p>Perfil</p>
+    </header>
+    <div class="main">
+        <section class="sec1"><img src="https://cdn-icons-png.flaticon.com/512/17/17004.png" alt="">
+        <input type="file" name="foto-usuario" id="foto-usuario">
+        </section>
+        
+        
+        
+        <section class="sec2">
+            <div class="div">
+                <label for="nome">Lúcio</label>
+                <label for="sobrenome">Almeida</label>
+            </div>
+            <div class="div">
+                <label for="endereco">Rua Valentin Dantas</label>
+                <label for="telefone">89 99427-4965</label>
+            </div>
+            <div class="div">
+                <label for="cpf">254.724.657-33</label>
+                <label for="idade">29</label>
+            </div>
+            <label for="nome" class="email">lucioalm@gmail.com</label>
+        </section>
+    </div>
+    <footer></footer>
+</body>
+</html>
